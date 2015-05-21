@@ -10,7 +10,7 @@ module Spine
       end
 
       def errors?
-        !errors.empty?
+        errors.any?
       end
     end
   end
