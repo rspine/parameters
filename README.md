@@ -1,6 +1,6 @@
 # Spine::Parameters
 
-[![Gem Version](http://img.shields.io/gem/v/spine-parameters.svg)][gem]
+[![Gem Version](https://badge.fury.io/rb/spine-parameters.svg)](http://badge.fury.io/rb/spine-parameters)
 [![Dependency Status](https://gemnasium.com/rspine/parameters.svg)](https://gemnasium.com/rspine/parameters)
 [![Code Climate](https://codeclimate.com/github/rspine/parameters/badges/gpa.svg)](https://codeclimate.com/github/rspine/parameters)
 [ ![Codeship Status for rspine/parameters](https://codeship.com/projects/c3d614e0-e11c-0132-df07-763d3ae4d225/status?branch=master)](https://codeship.com/projects/81066)
