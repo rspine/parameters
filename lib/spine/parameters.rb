@@ -2,6 +2,7 @@ module Spine
   module Parameters
     autoload :Errors, 'spine/parameters/errors'
     autoload :Collection, 'spine/parameters/collection'
+    autoload :Action, 'spine/parameters/action'
 
     module Syntax
       autoload :Constraint, 'spine/parameters/syntax/constraint'
