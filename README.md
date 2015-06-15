@@ -4,7 +4,9 @@
 [![Dependency Status](https://gemnasium.com/rspine/parameters.svg)](https://gemnasium.com/rspine/parameters)
 [![Test Coverage](https://codeclimate.com/github/rspine/parameters/badges/coverage.svg)](https://codeclimate.com/github/rspine/parameters/coverage)
 [![Code Climate](https://codeclimate.com/github/rspine/parameters/badges/gpa.svg)](https://codeclimate.com/github/rspine/parameters)
-[ ![Codeship Status for rspine/parameters](https://codeship.com/projects/c3d614e0-e11c-0132-df07-763d3ae4d225/status?branch=master)](https://codeship.com/projects/81066)
+[![security](https://hakiri.io/github/rspine/parameters/master.svg)](https://hakiri.io/github/rspine/parameters/master)
+[![Inline docs](http://inch-ci.org/github/rspine/parameters.svg?branch=master)](http://inch-ci.org/github/rspine/parameters)
+[![Codeship Status for rspine/parameters](https://codeship.com/projects/c3d614e0-e11c-0132-df07-763d3ae4d225/status?branch=master)](https://codeship.com/projects/81066)
 
 Validates and converts parameters. Also it converts all keys to symbols.
 
