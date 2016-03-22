@@ -10,13 +10,58 @@ module Spine
         {
           "selected_account_id"=>"1",
           "some_timestamp" => "2015-01-12T10:42:36+02:00",
-          "google_login" => "true"
+          "google_login" => "true",
+          "favourites" => "1,2,3",
+          "parsed_list" => ['1', '2'],
+          "parsed_integer" => 1,
+          "parsed_map" => { key: 'value' }
         }
       }
 
       it "symbolizes keys" do
         expect(subject[:selected_account_id]).to be
         expect(subject[:some_timestamp]).to be
+      end
+
+      context "when parsing list" do
+        it "returns valid array" do
+          subject.list(:favourites)
+          expect(subject[:favourites]).to eq(['1', '2', '3'])
+        end
+
+        it "returns valid array of specified type" do
+          subject.list(:favourites, type: :integer)
+          expect(subject[:favourites]).to eq([1, 2, 3])
+        end
+
+        it "has errors if list is not parsed" do
+          subject.list(:parsed_integer)
+          expect(subject.errors?).to be
+        end
+      end
+
+      context "when parsing parsed list" do
+        it "returns valid array" do
+          subject.list(:parsed_list)
+          expect(subject[:parsed_list]).to eq(['1', '2'])
+        end
+
+        it "returns valid array of specified type" do
+          subject.list(:parsed_list, type: :integer)
+          expect(subject[:parsed_list]).to eq([1, 2])
+        end
+      end
+
+      context "when parsing parsed map" do
+        it "returns valid array" do
+          subject.list(:parsed_map)
+          expect(subject[:parsed_map]).to eq([[:key, 'value']])
+        end
+
+        it "has errors" do
+          subject.list(:parsed_map, type: :integer)
+          expect(subject.errors?).to be
+        end
       end
 
       context "when parsing integer" do
@@ -68,12 +113,12 @@ module Spine
       end
 
       context "with required constraint" do
-        it "has an error, if key is missing" do 
+        it "has an error, if key is missing" do
           subject.required(:beginning_of_week)
           expect(subject.errors?).to be
         end
 
-        it "has no errors if key exists" do 
+        it "has no errors if key exists" do
           subject.required(:some_timestamp)
           expect(subject.errors?).not_to be
         end

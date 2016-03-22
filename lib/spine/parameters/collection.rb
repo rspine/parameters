@@ -8,6 +8,7 @@ module Spine
       include Syntax::Boolean
       include Syntax::Constraint
       include Syntax::Required
+      include Syntax::List
       include Errors
 
       attr_reader :raw, :values

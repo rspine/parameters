@@ -27,6 +27,8 @@ parameters = Spine::Parameters::Collection.new(parameters_containing_hash)
 parameters.required(:name)
   .integer(:id)
   .timestamp(:since)
+  .boolean(:valid)
+  .list(:favourites)
 
 parameters.errors? # Checks if there is any parsing error.
 parameters.errors
